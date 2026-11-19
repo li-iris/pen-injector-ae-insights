@@ -1,0 +1,2057 @@
+{
+"1001036": {
+"mode": "dose",
+"component": 4,
+"summary": "患者认为柱塞不推药、剂量不足致高血糖"
+},
+"1016963": {
+"mode": "display",
+"component": 5,
+"summary": "剂量显示缺笔段"
+},
+"10221868": {
+"mode": "needle",
+"component": 6,
+"summary": "笔用针头堵塞"
+},
+"1024856": {
+"mode": "other",
+"component": 8,
+"summary": "疗效不足住院，器械问题未说明"
+},
+"10338386": {
+"mode": "needle",
+"component": 7,
+"summary": "注射前针头脱出"
+},
+"1038937": {
+"mode": "display",
+"component": 5,
+"summary": "外壳裂纹，显示屏黑点、缺笔段"
+},
+"10454266": {
+"mode": "dose",
+"component": 7,
+"summary": "药液渗出、柱塞未到底，给药不全"
+},
+"1054127": {
+"mode": "display",
+"component": 5,
+"summary": "显示屏全黑，笔失灵"
+},
+"10613446": {
+"mode": "needle",
+"component": 6,
+"summary": "笔针导致注射卡滞，换针后正常"
+},
+"1063982": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"1077577": {
+"mode": "dose",
+"component": 3,
+"summary": "有咔嗒声但患者觉得未注完，再按一次（疑重复给药）"
+},
+"1078373": {
+"mode": "other",
+"component": 8,
+"summary": "低/高血糖，故障点未说明"
+},
+"1078375": {
+"mode": "other",
+"component": 8,
+"summary": "反复低血糖晕厥，器械问题未明"
+},
+"10945349": {
+"mode": "needle",
+"component": 6,
+"summary": "多支笔针堵塞无法给药；退回样品未见异常"
+},
+"10958692": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"1104189": {
+"mode": "stick",
+"component": 3,
+"summary": "注射力偏高"
+},
+"1104192": {
+"mode": "other",
+"component": 8,
+"summary": "住院，故障点未说明"
+},
+"11083188": {
+"mode": "needle",
+"component": 6,
+"summary": "部分笔针出液不畅；已退回检验"
+},
+"111283": {
+"mode": "use",
+"component": 8,
+"summary": "使用方法错误致未注入胰岛素、酮症住院"
+},
+"1130477": {
+"mode": "other",
+"component": 8,
+"summary": "严重低血糖，自述笔有缺陷"
+},
+"1150556": {
+"mode": "dose",
+"component": 4,
+"summary": "药筒用到末端时低血糖，疑剂量不准"
+},
+"11506807": {
+"mode": "needle",
+"component": 7,
+"summary": "针头卡住，未给药"
+},
+"11885497": {
+"mode": "other",
+"component": 7,
+"summary": "咨询是否在召回范围（止动环不可见）"
+},
+"11921971": {
+"mode": "dose",
+"component": 7,
+"summary": "按下按钮后未释放药物"
+},
+"1192805": {
+"mode": "other",
+"component": 8,
+"summary": "两周高血糖，故障点未说明"
+},
+"1193521": {
+"mode": "break",
+"component": 1,
+"summary": "卡扣断裂，使用中笔身散开"
+},
+"1193522": {
+"mode": "stick",
+"component": 4,
+"summary": "柱塞卡死、注射力高"
+},
+"12138072": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"12149788": {
+"mode": "dose",
+"component": 7,
+"summary": "自动注射器未给药"
+},
+"12161306": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"12276133": {
+"mode": "other",
+"component": 8,
+"summary": "质量问题未说明"
+},
+"1228497": {
+"mode": "other",
+"component": 8,
+"summary": "患者害怕使用，住院"
+},
+"12414132": {
+"mode": "other",
+"component": 7,
+"summary": "故障致漏打一剂，未说明部位"
+},
+"1244163": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖、意识丧失，笔问题未说明"
+},
+"12514214": {
+"mode": "needle",
+"component": 6,
+"summary": "笔针不通，注射无药液"
+},
+"1251696": {
+"mode": "other",
+"component": 8,
+"summary": "未退回，信息不足"
+},
+"12525692": {
+"mode": "other",
+"component": 8,
+"summary": "厂家换笔，故障未说明"
+},
+"1257271": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖，未退回"
+},
+"12682283": {
+"mode": "other",
+"component": 8,
+"summary": "问题未说明"
+},
+"1274972": {
+"mode": "dose",
+"component": 8,
+"summary": "自述剂量不准致血糖波动；退回检验确认故障"
+},
+"12820712": {
+"mode": "other",
+"component": 8,
+"summary": "一支笔故障，未说明"
+},
+"1297688": {
+"mode": "break",
+"component": 1,
+"summary": "药筒细微裂纹，疑漏液致高血糖"
+},
+"1354273": {
+"mode": "use",
+"component": 8,
+"summary": "患者混淆两支笔，用错药住院"
+},
+"1368926": {
+"mode": "other",
+"component": 8,
+"summary": "疗效不足归因于笔故障，未明"
+},
+"13863910": {
+"mode": "needle",
+"component": 7,
+"summary": "针未刺入、针脱落，药液洒出"
+},
+"1387493": {
+"mode": "other",
+"component": 8,
+"summary": "医生建议换笔（笔不工作），未退回"
+},
+"13929567": {
+"mode": "dose",
+"component": 7,
+"summary": "未感针刺，疑未给药"
+},
+"1401346": {
+"mode": "dose",
+"component": 8,
+"summary": "笔不出药，血糖700住院"
+},
+"14207538": {
+"mode": "other",
+"component": 7,
+"summary": "咨询自动注射器（手抖需要）"
+},
+"1439097": {
+"mode": "other",
+"component": 8,
+"summary": "急诊高血糖，故障未明"
+},
+"1442844": {
+"mode": "break",
+"component": 1,
+"summary": "药筒玻璃裂，显示闪烁无法复位"
+},
+"14514750": {
+"mode": "needle",
+"component": 7,
+"summary": "针头未伸出卡住，未给药"
+},
+"1461314": {
+"mode": "other",
+"component": 8,
+"summary": "低血糖，故障未明"
+},
+"1486848": {
+"mode": "display",
+"component": 5,
+"summary": "退回检验发现剂量显示缺笔段"
+},
+"1494916": {
+"mode": "stick",
+"component": 2,
+"summary": "剂量旋钮发硬"
+},
+"1496039": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣损坏"
+},
+"15003857": {
+"mode": "use",
+"component": 7,
+"summary": "注射时笔滑脱，药液流出"
+},
+"1502629": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖住院，诱因排查中"
+},
+"15066926": {
+"mode": "use",
+"component": 8,
+"summary": "患者拿错笔"
+},
+"1507665": {
+"mode": "display",
+"component": 5,
+"summary": "显示屏 LCD 裂、缺笔段（放口袋）"
+},
+"1507666": {
+"mode": "stick",
+"component": 4,
+"summary": "柱塞卡死"
+},
+"1509732": {
+"mode": "display",
+"component": 5,
+"summary": "显示乱码条纹"
+},
+"1516489": {
+"mode": "dose",
+"component": 8,
+"summary": "剂量不足致高血糖（护士判断）"
+},
+"1518541": {
+"mode": "display",
+"component": 5,
+"summary": "电池标志闪烁后失灵、缺笔段"
+},
+"1520701": {
+"mode": "display",
+"component": 5,
+"summary": "设定剂量后显示闪烁条纹"
+},
+"1525218": {
+"mode": "break",
+"component": 1,
+"summary": "卡扣损坏，且重复使用针头"
+},
+"1550442": {
+"mode": "stick",
+"component": 4,
+"summary": "笔卡死，多次高血糖住院"
+},
+"1599112": {
+"mode": "display",
+"component": 5,
+"summary": "显示缺笔段、无法复位"
+},
+"1600280": {
+"mode": "stick",
+"component": 4,
+"summary": "注射丝杆不工作"
+},
+"1626373": {
+"mode": "display",
+"component": 5,
+"summary": "显示无单位、缺笔段"
+},
+"1638080": {
+"mode": "display",
+"component": 5,
+"summary": "显示电池符号，患者不确定是否足量给药"
+},
+"1649771": {
+"mode": "display",
+"component": 5,
+"summary": "卡环断裂、显示屏闪烁"
+},
+"16502113": {
+"mode": "other",
+"component": 8,
+"summary": "笔供应短缺 / 处方问题，非器械故障"
+},
+"16700941": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"1670209": {
+"mode": "leak",
+"component": 5,
+"summary": "药筒破裂漏液进笔，致显示闪烁"
+},
+"16769765": {
+"mode": "other",
+"component": 7,
+"summary": "自动注射笔使用过程正常，问题未说明"
+},
+"17052477": {
+"mode": "needle",
+"component": 7,
+"summary": "针头未刺入皮肤，药液流在体外"
+},
+"1711487": {
+"mode": "use",
+"component": 8,
+"summary": "未按要求停留 5 秒，低血糖急诊"
+},
+"1714044": {
+"mode": "fit",
+"component": 1,
+"summary": "药筒架松动装不牢，剂量存疑"
+},
+"1730289": {
+"mode": "display",
+"component": 5,
+"summary": "半年后电池耗尽、显示缺笔段"
+},
+"1746853": {
+"mode": "fit",
+"component": 1,
+"summary": "药筒架松脱，两个卡扣断裂"
+},
+"1746894": {
+"mode": "display",
+"component": 5,
+"summary": "剂量数字显示不全"
+},
+"1746896": {
+"mode": "display",
+"component": 5,
+"summary": "无法开机，显示缺笔段"
+},
+"1779003": {
+"mode": "stick",
+"component": 3,
+"summary": "注射按压发硬，后酮症住院"
+},
+"17852134": {
+"mode": "dose",
+"component": 7,
+"summary": "过敏发作时 EpiPen 未出药"
+},
+"17852195": {
+"mode": "dose",
+"component": 7,
+"summary": "过敏发作时 EpiPen 未出药"
+},
+"1789021": {
+"mode": "display",
+"component": 5,
+"summary": "数字缺笔段，看不清剂量"
+},
+"1790370": {
+"mode": "use",
+"component": 8,
+"summary": "药房误发半单位笔，剂量少一半"
+},
+"1819944": {
+"mode": "display",
+"component": 5,
+"summary": "退回检验发现剂量数字缺笔段"
+},
+"18335008": {
+"mode": "other",
+"component": 8,
+"summary": "药液有颗粒和气泡（药品质量）"
+},
+"1848620": {
+"mode": "display",
+"component": 5,
+"summary": "进入复位模式，缺笔段"
+},
+"18486938": {
+"mode": "use",
+"component": 1,
+"summary": "10mg 药筒可装进 5mg 笔，可能过量（防错设计缺失）"
+},
+"1878076": {
+"mode": "stick",
+"component": 4,
+"summary": "丝杆不前进"
+},
+"1883767": {
+"mode": "display",
+"component": 5,
+"summary": "显示数字不全"
+},
+"1948171": {
+"mode": "display",
+"component": 5,
+"summary": "日期显示数字不全"
+},
+"1956221": {
+"mode": "leak",
+"component": 5,
+"summary": "药筒破裂漏液进笔，显示缺笔段"
+},
+"1966043": {
+"mode": "display",
+"component": 5,
+"summary": "无法复位，电池失效、缺笔段"
+},
+"1997229": {
+"mode": "display",
+"component": 5,
+"summary": "笔失效致酮症入院"
+},
+"1997230": {
+"mode": "display",
+"component": 5,
+"summary": "跌落后显示屏损坏"
+},
+"1997721": {
+"mode": "display",
+"component": 5,
+"summary": "显示缺笔段"
+},
+"1997789": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"2004869": {
+"mode": "display",
+"component": 5,
+"summary": "使用 5 个月后进入复位模式，显示缺线"
+},
+"202243": {
+"mode": "other",
+"component": 8,
+"summary": "昏迷、酸中毒，器械问题未说明"
+},
+"2023597": {
+"mode": "leak",
+"component": 1,
+"summary": "长期给药问题，血液渗入笔内"
+},
+"20563369": {
+"mode": "dose",
+"component": 1,
+"summary": "药筒无法混匀，当天未用药"
+},
+"20630600": {
+"mode": "other",
+"component": 8,
+"summary": "3 支笔有缺陷，未说明"
+},
+"22019370": {
+"mode": "stick",
+"component": 2,
+"summary": "剂量旋钮转不动"
+},
+"2243950": {
+"mode": "needle",
+"component": 7,
+"summary": "EpiPen 卡在体内，针头弯曲带毛刺"
+},
+"2310315": {
+"mode": "dose",
+"component": 7,
+"summary": "未听到给药提示音，四支笔受影响"
+},
+"23144015": {
+"mode": "stick",
+"component": 7,
+"summary": "按压后不释放，拔出致注射不全"
+},
+"23221211": {
+"mode": "stick",
+"component": 4,
+"summary": "按压柱塞不出针"
+},
+"2358495": {
+"mode": "stick",
+"component": 2,
+"summary": "旋钮转不动，无法设定剂量"
+},
+"2814703": {
+"mode": "needle",
+"component": 7,
+"summary": "针头未弹出 / 缺失 / 弯曲"
+},
+"317643": {
+"mode": "leak",
+"component": 8,
+"summary": "疑似漏液，只出几滴"
+},
+"322834": {
+"mode": "dose",
+"component": 8,
+"summary": "使用 42 周后注射后血糖持续升高，疑给药下降"
+},
+"324507": {
+"mode": "other",
+"component": 8,
+"summary": "因果不明，血糖不稳"
+},
+"324676": {
+"mode": "other",
+"component": 1,
+"summary": "药筒内有大气泡；退回检验卡扣完好"
+},
+"324681": {
+"mode": "use",
+"component": 3,
+"summary": "按钮发硬，患者反向旋转旋钮注射（沿用旧笔习惯）"
+},
+"324684": {
+"mode": "dose",
+"component": 4,
+"summary": "按下有咔嗒声但丝杆未推出药液"
+},
+"324690": {
+"mode": "use",
+"component": 8,
+"summary": "未接受培训，三天未注入胰岛素；退回检验正常"
+},
+"324702": {
+"mode": "use",
+"component": 8,
+"summary": "无法排气（prime）"
+},
+"324705": {
+"mode": "other",
+"component": 8,
+"summary": "酮症住院，器械问题未说明"
+},
+"324707": {
+"mode": "needle",
+"component": 6,
+"summary": "30G 笔针与笔不匹配，注射不良致酮症"
+},
+"324711": {
+"mode": "other",
+"component": 8,
+"summary": "家属操作，报告人认为与器械无关"
+},
+"324714": {
+"mode": "other",
+"component": 8,
+"summary": "多次酮症住院，与笔关联不明"
+},
+"324736": {
+"mode": "dose",
+"component": 8,
+"summary": "笔不出药，高血糖"
+},
+"324742": {
+"mode": "other",
+"component": 8,
+"summary": "笔故障延长住院，换笔后好转（未说明故障点）"
+},
+"325987": {
+"mode": "other",
+"component": 8,
+"summary": "笔故障，换笔后好转"
+},
+"325997": {
+"mode": "dose",
+"component": 8,
+"summary": "疑给药过量，可能是故障或使用错误"
+},
+"327020": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖，笔问题未说明"
+},
+"327426": {
+"mode": "use",
+"component": 6,
+"summary": "针头被推进笔帽、药筒架弯曲"
+},
+"328362": {
+"mode": "other",
+"component": 8,
+"summary": "换 3ml 药筒后已恢复正常"
+},
+"332866": {
+"mode": "other",
+"component": 8,
+"summary": "酮症住院，报告人认为与笔相关"
+},
+"335054": {
+"mode": "dose",
+"component": 8,
+"summary": "疑一周未给药；检查药筒架和卡扣完好"
+},
+"337418": {
+"mode": "use",
+"component": 8,
+"summary": "医护人员也不会用这款笔"
+},
+"337911": {
+"mode": "other",
+"component": 8,
+"summary": "酮症住院，笔问题未说明"
+},
+"337913": {
+"mode": "stick",
+"component": 4,
+"summary": "活塞工作不正常，未退回"
+},
+"341128": {
+"mode": "break",
+"component": 1,
+"summary": "药筒架升级后两支药筒破裂"
+},
+"343110": {
+"mode": "other",
+"component": 8,
+"summary": "酮症，已退回"
+},
+"351569": {
+"mode": "dose",
+"component": 8,
+"summary": "换笔后血糖改善，疑原笔给药不准"
+},
+"351621": {
+"mode": "stick",
+"component": 4,
+"summary": "推杆只部分工作"
+},
+"351776": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖，信息不足"
+},
+"352948": {
+"mode": "other",
+"component": 8,
+"summary": "自认笔故障；检查卡扣无断裂"
+},
+"356069": {
+"mode": "dose",
+"component": 8,
+"summary": "不信任笔，疑给药不准"
+},
+"356071": {
+"mode": "other",
+"component": 8,
+"summary": "笔交给监管机构，信息不足"
+},
+"356076": {
+"mode": "other",
+"component": 8,
+"summary": "笔工作不正常（未说明）"
+},
+"358493": {
+"mode": "other",
+"component": 8,
+"summary": "低血糖住院，信息不足"
+},
+"358554": {
+"mode": "dose",
+"component": 8,
+"summary": "笔给药量不准"
+},
+"359829": {
+"mode": "other",
+"component": 8,
+"summary": "昏迷、血糖波动，笔问题未说明"
+},
+"362371": {
+"mode": "other",
+"component": 8,
+"summary": "酮症，笔待退回"
+},
+"364327": {
+"mode": "break",
+"component": 4,
+"summary": "底座脱落，注射丝杆不前进"
+},
+"366102": {
+"mode": "stick",
+"component": 4,
+"summary": "柱塞卡滞需很大力，药筒破裂"
+},
+"368675": {
+"mode": "stick",
+"component": 4,
+"summary": "注射行程中卡死并缓慢漏液"
+},
+"370760": {
+"mode": "break",
+"component": 4,
+"summary": "丝杆断裂；联络人认为是使用错误"
+},
+"384232": {
+"mode": "other",
+"component": 8,
+"summary": "酮症，信息不足"
+},
+"384386": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖住院，归因于笔"
+},
+"385545": {
+"mode": "other",
+"component": 8,
+"summary": "故障未说明，寄回途中丢失"
+},
+"386034": {
+"mode": "other",
+"component": 8,
+"summary": "培训过的用户，笔退回分析中"
+},
+"388521": {
+"mode": "stick",
+"component": 4,
+"summary": "黑色柱塞不移动"
+},
+"392492": {
+"mode": "dose",
+"component": 8,
+"summary": "两支笔先后不出药"
+},
+"392496": {
+"mode": "other",
+"component": 8,
+"summary": "未报告故障，未退回"
+},
+"393764": {
+"mode": "use",
+"component": 1,
+"summary": "未取针帽就盖笔帽，药筒卡住"
+},
+"405307": {
+"mode": "dose",
+"component": 8,
+"summary": "换注射器后血糖恢复，疑笔给药不足"
+},
+"406042": {
+"mode": "other",
+"component": 8,
+"summary": "换用笔后血糖升高"
+},
+"406067": {
+"mode": "other",
+"component": 8,
+"summary": "未退回，信息不足"
+},
+"408952": {
+"mode": "break",
+"component": 0,
+"summary": "笔身缺口，注射无阻力"
+},
+"416585": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"418181": {
+"mode": "dose",
+"component": 8,
+"summary": "血糖连续偏高，改用注射器后正常"
+},
+"418644": {
+"mode": "dose",
+"component": 8,
+"summary": "只出少量胰岛素，改用注射器后血糖正常"
+},
+"420666": {
+"mode": "needle",
+"component": 6,
+"summary": "针头断在皮下"
+},
+"422282": {
+"mode": "dose",
+"component": 8,
+"summary": "疑每次给药过量"
+},
+"422321": {
+"mode": "dose",
+"component": 8,
+"summary": "疑剂量不准，高血糖酮症"
+},
+"422700": {
+"mode": "stick",
+"component": 3,
+"summary": "注射力过大，改为反向旋转旋钮注射"
+},
+"423542": {
+"mode": "dose",
+"component": 8,
+"summary": "笔注射不正常，血糖升高"
+},
+"423633": {
+"mode": "fit",
+"component": 1,
+"summary": "药筒架装不住，退回检验"
+},
+"425374": {
+"mode": "dose",
+"component": 8,
+"summary": "无法排气，下午剂量未注入"
+},
+"425778": {
+"mode": "other",
+"component": 8,
+"summary": "使用笔时血糖波动"
+},
+"427573": {
+"mode": "dose",
+"component": 6,
+"summary": "疑剂量不准，针头滴漏"
+},
+"430165": {
+"mode": "other",
+"component": 8,
+"summary": "医生称笔失效，退回分析中"
+},
+"434755": {
+"mode": "other",
+"component": 8,
+"summary": "卡扣完好，待退回检验"
+},
+"434804": {
+"mode": "dose",
+"component": 8,
+"summary": "笔给药不正常，归因于酮症；待退回"
+},
+"446705": {
+"mode": "dose",
+"component": 8,
+"summary": "认为没打进剂量而住院，笔已退回药房"
+},
+"446924": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"446932": {
+"mode": "stick",
+"component": 4,
+"summary": "注射丝杆卡死，换笔后血糖恢复"
+},
+"446957": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"450664": {
+"mode": "dose",
+"component": 8,
+"summary": "多方用注射器核对，确认剂量不准"
+},
+"450702": {
+"mode": "dose",
+"component": 8,
+"summary": "多方用注射器核对，确认剂量不准"
+},
+"456441": {
+"mode": "dose",
+"component": 3,
+"summary": "按下剂量钮不出药、打滑；退回外观良好"
+},
+"460962": {
+"mode": "stick",
+"component": 3,
+"summary": "笔一直发硬，未退回"
+},
+"462083": {
+"mode": "dose",
+"component": 4,
+"summary": "药筒用到一半时笔停止工作"
+},
+"472585": {
+"mode": "stick",
+"component": 4,
+"summary": "活塞工作不正常"
+},
+"473124": {
+"mode": "break",
+"component": 1,
+"summary": "使用一年后两个卡扣断裂"
+},
+"476273": {
+"mode": "stick",
+"component": 4,
+"summary": "丝杆表面有油状物"
+},
+"479521": {
+"mode": "other",
+"component": 8,
+"summary": "报告缺陷，未说明"
+},
+"483398": {
+"mode": "use",
+"component": 8,
+"summary": "两支笔同时故障；有重复用针等不当使用"
+},
+"486590": {
+"mode": "other",
+"component": 8,
+"summary": "笔不工作，未说明"
+},
+"488048": {
+"mode": "fit",
+"component": 0,
+"summary": "底座脱落；双卡扣断裂可致剂量不足"
+},
+"491679": {
+"mode": "leak",
+"component": 8,
+"summary": "笔漏液，初判为胰岛素反应"
+},
+"492197": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"500413": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂，剂量精度超标"
+},
+"500809": {
+"mode": "stick",
+"component": 4,
+"summary": "疑丝杆有问题"
+},
+"504009": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"506265": {
+"mode": "other",
+"component": 8,
+"summary": "已丢弃，无法判定"
+},
+"509002": {
+"mode": "other",
+"component": 8,
+"summary": "使用后高血糖住院，信息不足"
+},
+"512455": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂，可致给药不足"
+},
+"522326": {
+"mode": "fit",
+"component": 1,
+"summary": "疑底座脱落或药筒架卡住，报告人不确定"
+},
+"528415": {
+"mode": "other",
+"component": 8,
+"summary": "护士认为笔有问题，两支已退回"
+},
+"528493": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"5311046": {
+"mode": "fit",
+"component": 0,
+"summary": "笔帽完全盖不上"
+},
+"531578": {
+"mode": "use",
+"component": 3,
+"summary": "未正确按压柱塞，导致跳剂量"
+},
+"5324436": {
+"mode": "dose",
+"component": 8,
+"summary": "患者认为笔给药不正常"
+},
+"547614": {
+"mode": "other",
+"component": 8,
+"summary": "无针头可用致住院（非器械故障）"
+},
+"549864": {
+"mode": "stick",
+"component": 4,
+"summary": "丝杆不正常，只出一小滴，注射很费力"
+},
+"574566": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂，剂量精度超标"
+},
+"577956": {
+"mode": "break",
+"component": 1,
+"summary": "两支笔的卡扣都断裂"
+},
+"589663": {
+"mode": "break",
+"component": 1,
+"summary": "丝杆不动；检验发现两个卡扣断裂"
+},
+"6053657": {
+"mode": "needle",
+"component": 6,
+"summary": "针头断入体内风险（未退回）"
+},
+"614460": {
+"mode": "stick",
+"component": 3,
+"summary": "能设定剂量但打不出去"
+},
+"6240362": {
+"mode": "needle",
+"component": 6,
+"summary": "插针时针头多次折断残留体内；尺寸符合规格"
+},
+"6439425": {
+"mode": "needle",
+"component": 6,
+"summary": "注射后针尖缺失；已退回"
+},
+"644460": {
+"mode": "stick",
+"component": 4,
+"summary": "冷藏后柱塞卡死"
+},
+"6809603": {
+"mode": "other",
+"component": 7,
+"summary": "Humira 笔注射时故障，未说明"
+},
+"6812704": {
+"mode": "dose",
+"component": 8,
+"summary": "笔里打不出胰岛素"
+},
+"6816486": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"6839248": {
+"mode": "dose",
+"component": 7,
+"summary": "两支都没出药"
+},
+"689735": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"698306": {
+"mode": "stick",
+"component": 4,
+"summary": "注射丝杆移动不正常"
+},
+"701066": {
+"mode": "other",
+"component": 8,
+"summary": "住院后笔出问题，未说明"
+},
+"707233": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"708237": {
+"mode": "stick",
+"component": 3,
+"summary": "每次要按 6–10 次才有确认咔嗒声"
+},
+"708250": {
+"mode": "stick",
+"component": 3,
+"summary": "每次要按 6–10 次才有确认咔嗒声"
+},
+"7163767": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"718008": {
+"mode": "break",
+"component": 1,
+"summary": "丝杆间歇移动、剂量不准；检验发现两个卡扣断裂"
+},
+"723081": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"723095": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"7259526": {
+"mode": "dose",
+"component": 7,
+"summary": "放入注射器后药液提前喷出"
+},
+"736405": {
+"mode": "break",
+"component": 1,
+"summary": "传动不正常、剂量错；检验发现卡扣断裂"
+},
+"751574": {
+"mode": "dose",
+"component": 8,
+"summary": "夜间基础胰岛素未注入"
+},
+"765991": {
+"mode": "break",
+"component": 1,
+"summary": "药筒架松动、卡扣断裂；未每次排气"
+},
+"772132": {
+"mode": "break",
+"component": 1,
+"summary": "柱塞卡死、注射力高；检验发现两个卡扣断裂"
+},
+"7897670": {
+"mode": "dose",
+"component": 7,
+"summary": "故障，药液完全没打进去"
+},
+"793559": {
+"mode": "dose",
+"component": 8,
+"summary": "笔剂量不准"
+},
+"796426": {
+"mode": "break",
+"component": 1,
+"summary": "丝杆不前进；检验发现两个卡扣断裂"
+},
+"799444": {
+"mode": "dose",
+"component": 8,
+"summary": "胰岛素打不出来"
+},
+"799591": {
+"mode": "break",
+"component": 1,
+"summary": "药筒破裂漏液，取不出"
+},
+"802166": {
+"mode": "other",
+"component": 8,
+"summary": "OptiClik 经常故障，未说明"
+},
+"809346": {
+"mode": "dose",
+"component": 8,
+"summary": "笔推不出胰岛素"
+},
+"810156": {
+"mode": "dose",
+"component": 8,
+"summary": "两次未打进剂量致高血糖"
+},
+"8282598": {
+"mode": "use",
+"component": 1,
+"summary": "药筒帽未拧到位，药液无法推出"
+},
+"8283850": {
+"mode": "dose",
+"component": 4,
+"summary": "柱塞偶尔下降过快；未能复现"
+},
+"8283852": {
+"mode": "dose",
+"component": 8,
+"summary": "药筒剩余量时多时少，疑剂量不准"
+},
+"8297284": {
+"mode": "needle",
+"component": 6,
+"summary": "四支 Victoza 笔的针头不工作"
+},
+"8333229": {
+"mode": "stick",
+"component": 4,
+"summary": "柱塞失灵，失去阻力"
+},
+"838102": {
+"mode": "break",
+"component": 1,
+"summary": "笔卡死很硬；检验发现两个卡扣断裂"
+},
+"838687": {
+"mode": "use",
+"component": 8,
+"summary": "首次注射量小没察觉，重复注射致低血糖"
+},
+"8392635": {
+"mode": "stick",
+"component": 3,
+"summary": "无法给药、操作困难；按压力测试合格"
+},
+"8441328": {
+"mode": "break",
+"component": 1,
+"summary": "按下不出药；检验发现径向卡扣断裂"
+},
+"8495881": {
+"mode": "dose",
+"component": 7,
+"summary": "多次尝试不释放，敲击后药液洒出"
+},
+"8577890": {
+"mode": "dose",
+"component": 8,
+"summary": "无法给药，药量几乎未用"
+},
+"8601480": {
+"mode": "dose",
+"component": 7,
+"summary": "自动注射器故障，只打进部分剂量"
+},
+"8603774": {
+"mode": "stick",
+"component": 8,
+"summary": "笔偶尔卡住；按压力测试合格"
+},
+"8617575": {
+"mode": "stick",
+"component": 8,
+"summary": "操作困难；按压力测试合格"
+},
+"8617934": {
+"mode": "stick",
+"component": 8,
+"summary": "偶尔卡住；按压力测试合格"
+},
+"8649499": {
+"mode": "needle",
+"component": 7,
+"summary": "按按钮不出针；未确认"
+},
+"8656416": {
+"mode": "other",
+"component": 8,
+"summary": "笔工作不正常；按压力测试合格"
+},
+"866243": {
+"mode": "break",
+"component": 1,
+"summary": "柱塞卡死、药筒架断裂、剂量错误"
+},
+"8713104": {
+"mode": "other",
+"component": 8,
+"summary": "笔不工作，无法调查"
+},
+"8739993": {
+"mode": "leak",
+"component": 7,
+"summary": "Humira 笔故障，大部分药液洒出"
+},
+"8786141": {
+"mode": "stick",
+"component": 3,
+"summary": "拇指按不动按钮，需双手"
+},
+"8795650": {
+"mode": "break",
+"component": 0,
+"summary": "笔身破裂；材料相容性问题（聚碳酸酯）"
+},
+"8795698": {
+"mode": "stick",
+"component": 3,
+"summary": "扳机无法释放、柱塞难推；按压力测试合格"
+},
+"8803387": {
+"mode": "needle",
+"component": 6,
+"summary": "笔针弯曲致漏打两剂"
+},
+"883111": {
+"mode": "break",
+"component": 1,
+"summary": "笔卡死；检验发现两个卡扣断裂"
+},
+"885808": {
+"mode": "other",
+"component": 8,
+"summary": "手感异常，疑有缺陷"
+},
+"8861431": {
+"mode": "stick",
+"component": 3,
+"summary": "柱塞难按；按压力测试合格"
+},
+"8870665": {
+"mode": "stick",
+"component": 3,
+"summary": "操作困难（可能换笔型不习惯）；按压力测试合格"
+},
+"8872075": {
+"mode": "break",
+"component": 0,
+"summary": "笔身破裂；材料相容性问题"
+},
+"8875071": {
+"mode": "break",
+"component": 0,
+"summary": "笔身开裂；材料相容性问题"
+},
+"8897718": {
+"mode": "dose",
+"component": 8,
+"summary": "无法注射"
+},
+"8916306": {
+"mode": "other",
+"component": 8,
+"summary": "注射器不工作，无样品"
+},
+"8920731": {
+"mode": "other",
+"component": 8,
+"summary": "笔有缺陷，未能确认"
+},
+"892755": {
+"mode": "stick",
+"component": 4,
+"summary": "笔卡死，已退回"
+},
+"8936132": {
+"mode": "stick",
+"component": 3,
+"summary": "按压发硬不下降；按压力测试合格"
+},
+"8962631": {
+"mode": "dose",
+"component": 8,
+"summary": "剂量问题（未详述）"
+},
+"8972234": {
+"mode": "dose",
+"component": 8,
+"summary": "无法给药（650IU 药筒设计给 600IU）"
+},
+"8975682": {
+"mode": "stick",
+"component": 8,
+"summary": "操作困难或不工作，未确认"
+},
+"9009874": {
+"mode": "break",
+"component": 0,
+"summary": "一支用后断裂，其他回撤不正常"
+},
+"9014643": {
+"mode": "dose",
+"component": 8,
+"summary": "应打 4 剂只够 3 剂；外观无损"
+},
+"9014880": {
+"mode": "dose",
+"component": 8,
+"summary": "给药问题；外观无损"
+},
+"9014881": {
+"mode": "dose",
+"component": 8,
+"summary": "应打 4 剂只够 3 剂；外观无损"
+},
+"9056646": {
+"mode": "fit",
+"component": 6,
+"summary": "针头与注射器脱离，未给药"
+},
+"9078117": {
+"mode": "other",
+"component": 8,
+"summary": "标签错误（使用前发现）"
+},
+"9079618": {
+"mode": "other",
+"component": 8,
+"summary": "非 BD 产品，信息不足"
+},
+"9106480": {
+"mode": "break",
+"component": 0,
+"summary": "笔身容易开裂；材料相容性问题"
+},
+"9110986": {
+"mode": "dose",
+"component": 8,
+"summary": "药笔故障致 Follistim 剂量不对"
+},
+"9119719": {
+"mode": "break",
+"component": 6,
+"summary": "拔针时有部件断裂；未确认"
+},
+"9124259": {
+"mode": "stick",
+"component": 3,
+"summary": "使用时阻力高；按压力测试合格"
+},
+"9125626": {
+"mode": "stick",
+"component": 8,
+"summary": "操作困难、无法给药、部件损坏；按压力测试合格"
+},
+"9129908": {
+"mode": "stick",
+"component": 8,
+"summary": "操作和给药困难；按压力测试合格"
+},
+"9148195": {
+"mode": "break",
+"component": 1,
+"summary": "笔打滑；检验发现径向卡扣断裂"
+},
+"9152493": {
+"mode": "needle",
+"component": 6,
+"summary": "使用前发现针头断裂；归为用户操作"
+},
+"9175314": {
+"mode": "dose",
+"component": 8,
+"summary": "笔有缺陷，无法注完整剂量"
+},
+"9180413": {
+"mode": "stick",
+"component": 3,
+"summary": "一个月来越来越难按；按压力测试合格"
+},
+"919742": {
+"mode": "stick",
+"component": 4,
+"summary": "笔卡死、剂量不对，换新笔正常"
+},
+"9218174": {
+"mode": "stick",
+"component": 3,
+"summary": "柱塞难按；未能复现"
+},
+"921944": {
+"mode": "fit",
+"component": 1,
+"summary": "药筒架有问题（未详述）"
+},
+"9226798": {
+"mode": "stick",
+"component": 2,
+"summary": "帕金森冻结发作时难以旋转拨轮"
+},
+"9239929": {
+"mode": "break",
+"component": 0,
+"summary": "笔身断裂仍在使用；材料相容性问题"
+},
+"9245284": {
+"mode": "other",
+"component": 8,
+"summary": "笔工作不正常；按压力测试合格"
+},
+"9245724": {
+"mode": "other",
+"component": 8,
+"summary": "注射问题；未复现"
+},
+"9255586": {
+"mode": "needle",
+"component": 6,
+"summary": "按不下去，针头弯成两段；同批第 3 起"
+},
+"925987": {
+"mode": "use",
+"component": 8,
+"summary": "未排气，酸中毒"
+},
+"929204": {
+"mode": "needle",
+"component": 6,
+"summary": "笔不出药；厂家指出重复用针可致堵塞"
+},
+"9295827": {
+"mode": "other",
+"component": 8,
+"summary": "笔故障；按压力测试合格"
+},
+"9304207": {
+"mode": "leak",
+"component": 6,
+"summary": "笔大量漏液；做了针头滴漏测试"
+},
+"9306081": {
+"mode": "stick",
+"component": 8,
+"summary": "无法给药、操作困难；按压力测试合格"
+},
+"9309175": {
+"mode": "stick",
+"component": 2,
+"summary": "笔转不动、阻力大，无法给药"
+},
+"932092": {
+"mode": "other",
+"component": 8,
+"summary": "信息截断"
+},
+"9355363": {
+"mode": "break",
+"component": 0,
+"summary": "笔 / 注射器断裂"
+},
+"9357081": {
+"mode": "break",
+"component": 0,
+"summary": "药筒插入处开裂；材料相容性问题"
+},
+"939493": {
+"mode": "display",
+"component": 5,
+"summary": "笔偶尔卡住，出院后显示 F0 错误"
+},
+"946707": {
+"mode": "break",
+"component": 1,
+"summary": "弹簧臂和卡扣断裂"
+},
+"949051": {
+"mode": "use",
+"component": 1,
+"summary": "患者从药瓶抽药装进笔（医院不供药筒）"
+},
+"955540": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"9690160": {
+"mode": "needle",
+"component": 6,
+"summary": "笔针连不上笔"
+},
+"9712127": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"972805": {
+"mode": "break",
+"component": 1,
+"summary": "柱塞卡死；检验发现两个卡扣断裂"
+},
+"978048": {
+"mode": "other",
+"component": 8,
+"summary": "高血糖住院，笔问题未说明"
+},
+"9828912": {
+"mode": "stick",
+"component": 3,
+"summary": "按钮不咔嗒、按不下去"
+},
+"982959": {
+"mode": "break",
+"component": 1,
+"summary": "注射力高、柱塞卡死、药筒架松；卡扣断裂"
+},
+"9902658": {
+"mode": "other",
+"component": 7,
+"summary": "EpiPen 未取出蓝色部件已凸起（召回自查）"
+},
+"6894333": {
+"mode": "leak",
+"component": 6,
+"summary": "胰岛素注射器抽不上药，金属与塑料间漏液"
+},
+"1317978": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"10211874": {
+"mode": "other",
+"component": 7,
+"summary": "收到召回信，止动环缺失"
+},
+"8624541": {
+"mode": "leak",
+"component": 8,
+"summary": "笔滴漏；外观无损"
+},
+"1752791": {
+"mode": "display",
+"component": 5,
+"summary": "显示屏数字 0 像 C，9 以下不显示"
+},
+"1649988": {
+"mode": "display",
+"component": 5,
+"summary": "显示 F0 错误，靠数咔嗒声设定剂量"
+},
+"1572129": {
+"mode": "display",
+"component": 5,
+"summary": "显示数字只显示一半"
+},
+"1437770": {
+"mode": "break",
+"component": 1,
+"summary": "药筒架两个卡扣断裂，剂量打不出"
+},
+"8613348": {
+"mode": "stick",
+"component": 4,
+"summary": "柱塞失去阻力；未能确认"
+},
+"12814512": {
+"mode": "break",
+"component": 8,
+"summary": "笔坏了，未说明"
+},
+"7945176": {
+"mode": "break",
+"component": 7,
+"summary": "Autoject 2 拔出时针头和断裂注射器留在大腿内"
+},
+"449772": {
+"mode": "break",
+"component": 1,
+"summary": "药筒架开裂，给药不正常"
+},
+"12325563": {
+"mode": "stick",
+"component": 3,
+"summary": "笔按钮卡住按不下去"
+},
+"5322429": {
+"mode": "break",
+"component": 1,
+"summary": "两个小卡扣断裂"
+},
+"225121": {
+"mode": "break",
+"component": 8,
+"summary": "笔已坏患者未察觉，剂量不足"
+},
+"1034630": {
+"mode": "break",
+"component": 1,
+"summary": "卡扣断裂、药筒架松动"
+},
+"1027304": {
+"mode": "break",
+"component": 0,
+"summary": "旧笔散架：笔帽裂、弹簧臂裂、卡扣断"
+},
+"12487744": {
+"mode": "other",
+"component": 8,
+"summary": "无正文"
+},
+"1559323": {
+"mode": "break",
+"component": 1,
+"summary": "卡扣断裂；未确认故障"
+},
+"1611223": {
+"mode": "dose",
+"component": 8,
+"summary": "患者觉得剂量不够"
+},
+"404766": {
+"mode": "stick",
+"component": 8,
+"summary": "旧笔偶尔发硬，无法判断"
+},
+"581773": {
+"mode": "break",
+"component": 4,
+"summary": "丝杆不动；检验发现卡扣断裂"
+},
+"10218057": {
+"mode": "other",
+"component": 7,
+"summary": "肾上腺素笔止动环缺失"
+},
+"477408": {
+"mode": "break",
+"component": 1,
+"summary": "插入时药筒顶部破裂"
+},
+"1513487": {
+"mode": "leak",
+"component": 5,
+"summary": "无法复位；推断药筒破裂漏液"
+},
+"843713": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"716827": {
+"mode": "fit",
+"component": 3,
+"summary": "注射按钮总是脱落，两天血糖升高"
+},
+"823632": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"2025269": {
+"mode": "break",
+"component": 4,
+"summary": "丝杆顶部断裂（一体金属件）"
+},
+"1561492": {
+"mode": "display",
+"component": 5,
+"summary": "笔帽夹缺失、笔帽腐蚀，显示缺笔段"
+},
+"324721": {
+"mode": "dose",
+"component": 8,
+"summary": "患者反映剂量没下去，与投诉不符"
+},
+"530110": {
+"mode": "stick",
+"component": 4,
+"summary": "两支笔丝杆卡死，药筒损坏"
+},
+"1761943": {
+"mode": "display",
+"component": 5,
+"summary": "数字 2 显示缺中间段"
+},
+"9161632": {
+"mode": "stick",
+"component": 8,
+"summary": "笔不如以前顺滑；按压力测试合格"
+},
+"9936056": {
+"mode": "dose",
+"component": 7,
+"summary": "按按钮不出药，过后突然喷出（弹簧卡滞）"
+},
+"1007957": {
+"mode": "stick",
+"component": 3,
+"summary": "按不下去，无法推药"
+},
+"8696635": {
+"mode": "leak",
+"component": 8,
+"summary": "笔滴漏；外观无损"
+},
+"9136619": {
+"mode": "leak",
+"component": 0,
+"summary": "BD 笔破损漏液，无样品"
+},
+"1476186": {
+"mode": "display",
+"component": 5,
+"summary": "无法回到复位模式"
+},
+"823587": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"1847517": {
+"mode": "display",
+"component": 5,
+"summary": "复位模式、显示缺笔段"
+},
+"1470360": {
+"mode": "display",
+"component": 5,
+"summary": "剂量数字显示缺笔段"
+},
+"1556814": {
+"mode": "display",
+"component": 5,
+"summary": "数字只显示一部分，剂量和日期看不清"
+},
+"8741587": {
+"mode": "leak",
+"component": 6,
+"summary": "装针后注射前后都大量滴漏"
+},
+"1846326": {
+"mode": "display",
+"component": 5,
+"summary": "显示缺笔段（护士报告）"
+},
+"1897229": {
+"mode": "display",
+"component": 5,
+"summary": "数字显示缺笔段"
+},
+"1258265": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"1869598": {
+"mode": "display",
+"component": 5,
+"summary": "剂量显示间歇缺笔段"
+},
+"9384454": {
+"mode": "other",
+"component": 8,
+"summary": "设备缺陷，未说明"
+},
+"1851149": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂，药筒架装不牢"
+},
+"581789": {
+"mode": "stick",
+"component": 4,
+"summary": "新款笔注射丝杆不动"
+},
+"1749427": {
+"mode": "display",
+"component": 5,
+"summary": "显示 C8、难按，电池耗尽"
+},
+"9157566": {
+"mode": "dose",
+"component": 8,
+"summary": "每次剩 1/4–1/3 药；未能确认"
+},
+"1048676": {
+"mode": "break",
+"component": 1,
+"summary": "卡扣断裂、弹簧臂裂，拨轮螺杆胶接失效"
+},
+"856136": {
+"mode": "fit",
+"component": 2,
+"summary": "剂量旋钮松脱掉出；胶接失效"
+},
+"345237": {
+"mode": "other",
+"component": 8,
+"summary": "退回检查无缺陷"
+},
+"427790": {
+"mode": "break",
+"component": 1,
+"summary": "一个卡扣断裂，给药不稳定"
+},
+"1365385": {
+"mode": "display",
+"component": 5,
+"summary": "显示符号缺失"
+},
+"1897220": {
+"mode": "display",
+"component": 5,
+"summary": "注射 60 单位后无法复位"
+},
+"1218529": {
+"mode": "display",
+"component": 5,
+"summary": "剂量显示缺笔段；说明书写明此时勿用"
+},
+"454169": {
+"mode": "stick",
+"component": 4,
+"summary": "按钮不起作用，丝杆空转不推药"
+},
+"17826745": {
+"mode": "stick",
+"component": 4,
+"summary": "只打了半剂柱塞就卡住"
+},
+"926040": {
+"mode": "display",
+"component": 5,
+"summary": "剂量显示缺笔段；剂量精度合格"
+},
+"663665": {
+"mode": "other",
+"component": 8,
+"summary": "信息不足"
+},
+"618120": {
+"mode": "break",
+"component": 0,
+"summary": "塑料破裂"
+},
+"9682062": {
+"mode": "dose",
+"component": 7,
+"summary": "Repatha 笔注射不正常"
+},
+"1878082": {
+"mode": "display",
+"component": 5,
+"summary": "剂量显示缺笔段；确认故障"
+},
+"495594": {
+"mode": "use",
+"component": 6,
+"summary": "未排气、未检查针头；医生也确认故障"
+},
+"1510592": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂，但排气和注射正常"
+},
+"8279755": {
+"mode": "leak",
+"component": 6,
+"summary": "装针后立刻漏液"
+},
+"1172043": {
+"mode": "break",
+"component": 1,
+"summary": "笔松动散开；检验发现两个卡扣断裂"
+},
+"1051314": {
+"mode": "stick",
+"component": 2,
+"summary": "拨轮转不动"
+},
+"742303": {
+"mode": "break",
+"component": 1,
+"summary": "三支笔都是两个卡扣断裂"
+},
+"1587755": {
+"mode": "display",
+"component": 5,
+"summary": "显示 F0 错误，缺笔段"
+},
+"8795617": {
+"mode": "leak",
+"component": 8,
+"summary": "使用后漏液；外观无损"
+},
+"1779098": {
+"mode": "display",
+"component": 5,
+"summary": "剂量显示缺笔段"
+},
+"953612": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂、弹簧臂断裂"
+},
+"972806": {
+"mode": "break",
+"component": 1,
+"summary": "两个卡扣断裂"
+},
+"12804278": {
+"mode": "stick",
+"component": 3,
+"summary": "笔卡住，按钮很难按"
+},
+"328309": {
+"mode": "other",
+"component": 8,
+"summary": "血糖恢复，两支笔都不构成可报告故障"
+}
+}
