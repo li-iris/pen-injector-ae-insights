@@ -1,0 +1,377 @@
+<title>注射笔不良事件洞察</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* 布局：顶部产品条 + 分页签；内容区按「先结论、后明细」排，左右留白随屏宽收缩 */
+:root{
+  --bg:#f6f8f8; --panel:#ffffff; --ink:#14201f; --muted:#5b6b69; --line:#dde5e4; --soft:#edf2f1;
+  --accent:#0b6e69; --accent-soft:#d9eeec; --accent-ink:#ffffff;
+  --crit:#b3261e; --crit-soft:#f8e1df; --warn:#a15c00; --warn-soft:#f6ead8; --ok:#2f7a3d; --ok-soft:#e1f0e3;
+  --c1:#0b6e69; --c2:#3f7fbf; --c3:#c0792b; --c4:#8a5bb5; --c5:#b3485a; --c6:#5a8f3c; --c7:#6b7a8f; --c8:#c9a227; --c9:#9aa7a5;
+  --sans:"IBM Plex Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1514; --panel:#161e1d; --ink:#e4ecea; --muted:#9aaba8; --line:#2a3634; --soft:#1c2625;
+  --accent:#4fbdb4; --accent-soft:#183634; --accent-ink:#0b1514;
+  --crit:#f08a80; --crit-soft:#3a1d1b; --warn:#e3a84f; --warn-soft:#352813; --ok:#7cc488; --ok-soft:#1a2e1d;
+  --c1:#4fbdb4; --c2:#7aaee0; --c3:#e0a060; --c4:#b58fd8; --c5:#e07f90; --c6:#93c46f; --c7:#9fb0c6; --c8:#e3c65a; --c9:#6f7d7b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1514; --panel:#161e1d; --ink:#e4ecea; --muted:#9aaba8; --line:#2a3634; --soft:#1c2625;
+  --accent:#4fbdb4; --accent-soft:#183634; --accent-ink:#0b1514;
+  --crit:#f08a80; --crit-soft:#3a1d1b; --warn:#e3a84f; --warn-soft:#352813; --ok:#7cc488; --ok-soft:#1a2e1d;
+  --c1:#4fbdb4; --c2:#7aaee0; --c3:#e0a060; --c4:#b58fd8; --c5:#e07f90; --c6:#93c46f; --c7:#9fb0c6; --c8:#e3c65a; --c9:#6f7d7b; color-scheme:dark}
+*{box-sizing:border-box} [hidden]{display:none!important} body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding-block:14px 6px}
+.brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:.01em}
+.brand .sub{color:var(--muted);font-size:13px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:99px}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;padding-block:4px 0;scrollbar-width:none}
+nav.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);padding:8px 12px;border-bottom:2px solid transparent;font-weight:500}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}
+nav.tabs a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{padding-block:20px 60px}
+section.view{display:grid;gap:18px}
+section.view>*,.grid>*,.split>*{min-width:0}
+h2{font-size:17px;margin:0;text-wrap:balance}
+h3{font-size:15px;margin:0}
+.lede{color:var(--muted);max-width:72ch;margin:0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g2,.g3{grid-template-columns:1fr}}
+.kpi .n{font-family:var(--mono);font-size:28px;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{color:var(--muted);font-size:12.5px}
+.kpi .d{font-size:12px;color:var(--muted);margin-top:4px}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:minmax(0,9.5em) 1fr 3.2em;gap:10px;align-items:center;font-size:13px}
+.bar .lab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .trk{height:12px;background:var(--soft);border-radius:3px;overflow:hidden;display:flex}
+.bar .trk span{display:block;height:100%}
+.bar .v{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+button.linkish{all:unset;cursor:pointer;color:var(--accent);font-weight:500}
+button.linkish:hover{text-decoration:underline}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:12px;white-space:nowrap}
+td.num{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.heat td.num{min-width:44px}
+.pill{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:99px;background:var(--soft);color:var(--ink);white-space:nowrap}
+.pill.crit{background:var(--crit-soft);color:var(--crit)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.src{background:var(--accent-soft);color:var(--accent)}
+.finding{display:grid;grid-template-columns:3.4em minmax(0,1fr);gap:4px 14px}
+.finding .big{font-family:var(--mono);font-size:24px;color:var(--accent);line-height:1.2}
+.finding p{margin:6px 0 0;max-width:80ch}
+.finding .act{margin-top:10px;display:grid;gap:6px;font-size:13px}
+.finding .act div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:8px}
+.finding .act b{color:var(--muted);font-weight:500}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters select,.filters input{font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);max-width:100%}
+.filters input{min-width:0;flex:1 1 200px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:14px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.list{max-height:70vh;overflow:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.row{display:grid;gap:3px;padding:10px 12px;border-bottom:1px solid var(--line);cursor:pointer}
+.row:hover{background:var(--soft)} .row[aria-selected="true"]{background:var(--accent-soft)}
+.row .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)}
+.row .s{font-size:13.5px}
+.detail{position:sticky;top:110px}
+.detail dl{display:grid;grid-template-columns:7em minmax(0,1fr);gap:6px 12px;margin:10px 0}
+.detail dt{color:var(--muted);font-size:12.5px} .detail dd{margin:0}
+.orig{font-family:var(--mono);font-size:12px;line-height:1.55;background:var(--soft);border-radius:8px;padding:10px;max-height:280px;overflow:auto;white-space:pre-wrap;word-break:break-word}
+mark{background:var(--warn-soft);color:var(--warn);padding:0 2px;border-radius:2px}
+.review{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:7px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.step{border:1px solid var(--line);border-radius:var(--r);padding:12px;background:var(--panel);display:grid;gap:4px;align-content:start}
+.step .k{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.05em}
+.step .n{font-family:var(--mono);font-size:20px}
+.step .t{font-size:12.5px;color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted)}
+code{font-family:var(--mono);font-size:12px;background:var(--soft);padding:1px 5px;border-radius:4px}
+ul.clean{margin:6px 0 0;padding-left:18px} ul.clean li{margin:3px 0}
+.chartbox{width:100%;overflow-x:auto}
+svg text{fill:var(--muted);font-family:var(--mono);font-size:11px}
+footer{color:var(--muted);font-size:12px;padding-block:24px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:no-preference){.bar .trk span{transition:width .4s ease}}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><h1>注射笔不良事件洞察</h1><span class="tag">FDA MAUDE · 真实数据</span><span class="sub" id="hdrsub">注射笔 / 自动注射器 不良事件报告，自动清洗、归类、分析</span></div>
+  <nav class="tabs" aria-label="页面">
+    <a href="#overview">总览</a><a href="#findings">关键发现</a><a href="#reports">报告浏览</a><a href="#pipeline">数据处理</a><a href="#eval">评测与复核</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<section class="view" id="v-overview">
+  <p class="lede" id="ov-lede">正在载入数据…</p>
+  <div class="grid g4" id="kpis"></div>
+  <div class="grid g2">
+    <div class="panel"><h3>失效模式分布</h3><p class="note">点击任一类别查看原始报告</p><div class="bars" id="b-mode"></div></div>
+    <div class="panel"><h3>失效模式 × 患者后果</h3><p class="note">每行按该类别的报告数归一，红色越长，伴随住院或急诊的比例越高</p><div class="bars" id="b-harm"></div><div class="legend" id="lg-harm"></div></div>
+  </div>
+  <div class="panel"><h3>产品族 × 失效模式</h3><p class="note">报告数最多的 8 个产品族；颜色越深数量越多</p><div class="scroll"><table class="heat" id="t-heat"></table></div></div>
+  <div class="panel"><h3>按年份的报告数与失效模式</h3><div class="chartbox"><svg id="c-year" role="img" aria-label="按年份堆叠的报告数"></svg></div><div class="legend" id="lg-year"></div><p class="note">MAUDE 只收录向 FDA 上报的事件；2001–2011 年礼来提交的报告占多数，年份分布反映的是上报量，不是真实故障率。</p></div>
+</section>
+
+<section class="view" id="v-findings" hidden>
+  <div><h2>六条关键发现，每条都能追到原始报告</h2><p class="lede">从数据里读出对注射器研发、质量和产品有用的结论。数字来自本页的数据，点「查看报告」看原文。</p></div>
+  <div class="grid" id="findings"></div>
+</section>
+
+<section class="view" id="v-reports" hidden>
+  <div class="filters panel">
+    <select id="f-mode" aria-label="失效模式"></select>
+    <select id="f-fam" aria-label="产品族"></select>
+    <select id="f-harm" aria-label="患者后果"></select>
+    <select id="f-src" aria-label="判定来源"></select>
+    <input id="f-q" type="search" placeholder="搜索英文原文或中文摘要，如 ENGAGEMENT TAB" aria-label="搜索">
+    <span class="note" id="f-count"></span>
+  </div>
+  <div class="split">
+    <div class="list" id="list" role="listbox" aria-label="报告列表"></div>
+    <div class="panel detail" id="detail"><p class="note">从左侧选一条报告查看原文、抽取结果和证据。</p></div>
+  </div>
+</section>
+
+<section class="view" id="v-pipeline" hidden>
+  <div><h2>从原始报告到结论：每一步做了什么</h2><p class="lede">原始数据来自 FDA openFDA 接口（device/event），检索注射笔、自动注射器相关通用名。处理全程留痕，代码见 GitHub。</p></div>
+  <div class="flow" id="flow"></div>
+  <div class="grid g2">
+    <div class="panel"><h3>清洗：同一家厂商有多少种写法</h3><div id="mfr-ex"></div></div>
+    <div class="panel"><h3>清洗：品牌名归并到产品族</h3><div id="fam-ex"></div></div>
+  </div>
+  <div class="grid g2">
+    <div class="panel"><h3>为什么分两层判定</h3>
+      <ul class="clean">
+        <li><b>规则层</b>：关键词正则 + FDA 结构化问题代码交叉核对。只有命中一类、且与 FDA 代码不矛盾时才算「高置信」，直接采用。成本为零、可解释。</li>
+        <li><b>大模型层</b>：规则拿不准的（没命中、命中多类、与 FDA 代码矛盾）才交给大模型，输出失效模式、失效部件和一句中文摘要。输入先去掉病史、合并用药等无关句子，只留与器械相关的关键句。</li>
+        <li><b>人工复核</b>：两层判定不一致的样本优先给人看；复核结果作为金标，用来评估两层的准确率。</li>
+      </ul>
+    </div>
+    <div class="panel"><h3>踩过的坑（都已修复）</h3>
+      <ul class="clean">
+        <li>隐私脱敏最初用「8 位以上数字」识别电话，误伤了 MDR 报告编号（如 <code>1819470-2008-00009</code>）和日期，42 处误打码。改为只认真实电话格式后误伤为 0。FDA 已把个人信息替换为 <code>(B)(6)</code>。</li>
+        <li>规则把 <code>MISSING SEGMENTS</code>（显示屏缺笔段）当成「部件缺失」，归错类。是在对比两层分歧时发现的。</li>
+        <li>给大模型的输入一开始只截前 300 字，关键信息在后面的报告被判成「信息不足」。改为按关键词给句子打分、挑最相关的句子后，这类误判明显减少。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="view" id="v-eval" hidden>
+  <div><h2>评测：结论有多可信</h2><p class="lede">分三层看：规则与大模型是否一致、分歧出在哪、人工复核后的准确率。</p></div>
+  <div class="grid g4" id="ev-kpis"></div>
+  <div class="grid g2">
+    <div class="panel"><h3>规则 vs 大模型 的分歧</h3><p class="note" id="ev-note"></p><div class="scroll"><table id="t-dis"></table></div></div>
+    <div class="panel"><h3>人工复核</h3><div id="rv-box"><p class="note">正在连接复核记录…</p></div></div>
+  </div>
+  <div class="panel"><h3>分歧样本（优先人工复核）</h3><div class="scroll"><table id="t-dis-rows"></table></div></div>
+  <div class="panel"><h3>局限</h3>
+    <ul class="clean">
+      <li>MAUDE 是自愿 + 强制上报的混合数据，存在漏报、重复报和描述不全，<b>只能看问题类型和信号，不能算故障率</b>。</li>
+      <li>样本以 2001–2011 年礼来 HumaPen 系列为主（约 2/3），结论对其他产品的外推要谨慎。</li>
+      <li>本页大模型层的结果由 Claude 生成；代码里同一份提示词可切换为本地部署的 Qwen（Ollama / vLLM），用于数据不能出内网的场景。</li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">数据来源：U.S. FDA openFDA Device Adverse Event（MAUDE），截至 2026-11-11 更新。本页为个人作品，仅作数据分析演示，不构成医疗或监管建议。作者：李江鑫 · 代码：github.com/li-iris/pen-injector-ae-insights</div></footer>
+
+<script>
+const $=s=>document.querySelector(s), esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MODE_ORDER=["部件断裂 / 裂纹","显示 / 电子 / 记忆功能","按钮 / 拨轮卡滞","给药不足 / 剂量不准","漏液","药筒 / 部件装配松脱","使用错误 / 说明书理解","针头相关","其他 / 信息不足"];
+const MODE_COL=["--c1","--c2","--c3","--c5","--c4","--c6","--c8","--c7","--c9"];
+const HARMS=["需住院或急诊","低血糖","血糖升高 / 酮症","其他伤害","无伤害","不明"];
+const HARM_COL=["--crit","--c4","--c3","--c8","--ok","--c9"];
+const col=v=>`var(${v})`;
+let R=[],S=null,reviews={},db=null,canEdit=false,state={mode:"",fam:"",harm:"",src:"",q:"",sel:null};
+const cnt=(a,f)=>a.reduce((m,x)=>(m[f(x)]=(m[f(x)]||0)+1,m),{});
+
+function route(){
+  const h=(location.hash||"#overview").slice(1);
+  const v=["overview","findings","reports","pipeline","eval"].includes(h)?h:"overview";
+  document.querySelectorAll("section.view").forEach(s=>s.hidden=s.id!=="v-"+v);
+  document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.getAttribute("href")!=="#"+v)a.removeAttribute("aria-current");else a.setAttribute("aria-current","page")});
+}
+addEventListener("hashchange",route);
+
+function goReports(f){Object.assign(state,{mode:"",fam:"",harm:"",src:"",q:"",sel:null},f);syncFilters();renderList();location.hash="#reports";}
+
+function overview(){
+  const I=S.insights, n=R.length;
+  $("#ov-lede").textContent=`共 ${n} 条报告（${I.years[0]}–${I.years[1]} 年，${I.families} 个产品族）。原始 ${I.cleaning.raw_records} 条，清洗去重后入库 ${I.cleaning.kept} 条；${I.by_source["规则"]} 条由规则判定，${I.by_source["大模型"]} 条交给大模型判定。`;
+  const hosp=R.filter(r=>r.harm==="需住院或急诊").length, conf=R.filter(r=>r.root==="退回检验确认故障").length;
+  $("#kpis").innerHTML=[
+    [n,"入库报告",`原始 ${I.cleaning.raw_records} · 去重 ${I.cleaning.dropped_duplicates} · 空正文 ${I.cleaning.dropped_empty}`],
+    [(100*(n-I.by_mode["其他 / 信息不足"])/n).toFixed(0)+"%","能归到具体失效模式",`其余 ${I.by_mode["其他 / 信息不足"]} 条描述不足`],
+    [hosp,"伴随住院或急诊",(100*hosp/n).toFixed(0)+"% 的报告"],
+    [conf,"厂家退回检验确认故障",`另有 ${R.filter(r=>r.root==="退回检验未复现").length} 条检验未复现`]
+  ].map(([v,l,d])=>`<div class="panel kpi"><div class="n">${v}</div><div class="l">${l}</div><div class="d">${d}</div></div>`).join("");
+  const bm=cnt(R,r=>r.mode_zh), mx=Math.max(...Object.values(bm));
+  $("#b-mode").innerHTML=MODE_ORDER.map((m,i)=>`<div class="bar"><button class="linkish lab" data-mode="${m}" title="${m}">${m}</button><div class="trk"><span style="width:${100*(bm[m]||0)/mx}%;background:${col(MODE_COL[i])}"></span></div><div class="v">${bm[m]||0}</div></div>`).join("");
+  $("#b-harm").innerHTML=MODE_ORDER.map(m=>{const xs=R.filter(r=>r.mode_zh===m),t=xs.length||1,c=cnt(xs,r=>r.harm);
+    return `<div class="bar"><span class="lab" title="${m}">${m}</span><div class="trk">${HARMS.map((h,i)=>`<span title="${h} ${c[h]||0}" style="width:${100*(c[h]||0)/t}%;background:${col(HARM_COL[i])}"></span>`).join("")}</div><div class="v">${Math.round(100*(c["需住院或急诊"]||0)/t)}%</div></div>`}).join("");
+  $("#lg-harm").innerHTML=HARMS.map((h,i)=>`<span><i style="background:${col(HARM_COL[i])}"></i>${h}</span>`).join("")+`<span>右侧数字 = 住院或急诊占比</span>`;
+  const fams=Object.entries(cnt(R,r=>r.family)).sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0]);
+  let hmax=0;const H=fams.map(f=>MODE_ORDER.map(m=>{const v=R.filter(r=>r.family===f&&r.mode_zh===m).length;hmax=Math.max(hmax,v);return v}));
+  $("#t-heat").innerHTML=`<tr><th>产品族</th>${MODE_ORDER.map(m=>`<th title="${m}">${m.split(" / ")[0]}</th>`).join("")}<th>合计</th></tr>`+
+    fams.map((f,i)=>`<tr><td><button class="linkish" data-fam="${esc(f)}">${esc(f)}</button></td>${H[i].map((v,j)=>`<td class="num" style="background:color-mix(in srgb, var(--accent) ${v?Math.round(8+70*v/hmax):0}%, transparent);color:${v/hmax>.55?"var(--accent-ink)":"inherit"}">${v||""}</td>`).join("")}<td class="num">${H[i].reduce((a,b)=>a+b,0)}</td></tr>`).join("");
+  yearChart();
+}
+function yearChart(){
+  const ys=[...new Set(R.map(r=>r.year).filter(Boolean))].sort((a,b)=>a-b), y0=ys[0], y1=ys[ys.length-1];
+  const years=[];for(let y=y0;y<=y1;y++)years.push(y);
+  const W=Math.max(640,years.length*22+60),Hh=220,pl=34,pb=24,pt=8;
+  const tot=years.map(y=>R.filter(r=>r.year===y).length), mx=Math.max(...tot), nice=Math.ceil(mx/20)*20;
+  const bw=(W-pl-10)/years.length, sy=v=>(Hh-pb-pt)*v/nice;
+  let g="";[0,.5,1].forEach(t=>{const v=Math.round(nice*t),y=Hh-pb-sy(v);g+=`<line x1="${pl}" x2="${W-6}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="${pl-6}" y="${y+4}" text-anchor="end">${v}</text>`});
+  years.forEach((y,i)=>{let acc=0;const x=pl+i*bw+2;
+    MODE_ORDER.forEach((m,k)=>{const v=R.filter(r=>r.year===y&&r.mode_zh===m).length;if(!v)return;const h=sy(v);g+=`<rect x="${x}" y="${Hh-pb-sy(acc)-h}" width="${bw-4}" height="${h}" fill="${col(MODE_COL[k])}"><title>${y} ${m}：${v}</title></rect>`;acc+=v});
+    if(i%2===0||years.length<16)g+=`<text x="${x+(bw-4)/2}" y="${Hh-6}" text-anchor="middle">${String(y).slice(2)}</text>`});
+  const s=$("#c-year");s.setAttribute("viewBox",`0 0 ${W} ${Hh}`);s.style.width="100%";s.style.minWidth="560px";s.style.height="auto";s.innerHTML=g;
+  $("#lg-year").innerHTML=MODE_ORDER.map((m,i)=>`<span><i style="background:${col(MODE_COL[i])}"></i>${m}</span>`).join("")+"<span>横轴为年份后两位</span>";
+}
+
+function findings(){
+  const T=r=>(r.text+" "+r.mfr).toUpperCase(), cntIf=f=>R.filter(f).length;
+  const erg=R.filter(r=>r.family.startsWith("HumaPen Ergo")), tab=erg.filter(r=>T(r).includes("ENGAGEMENT TAB"));
+  const tabConf=tab.filter(r=>r.root==="退回检验确认故障").length, tabUnder=tab.filter(r=>/UNDERDOSE|UNDER DOSE|DOSE ACCURACY/.test(T(r))).length;
+  const mem=R.filter(r=>r.family.startsWith("HumaPen Memoir")), seg=mem.filter(r=>T(r).includes("SEGMENT")).length, memConf=mem.filter(r=>r.root==="退回检验确认故障").length, mem10=mem.filter(r=>r.year===2010).length;
+  const mi=cntIf(r=>T(r).includes("MATERIAL INCOMPATIBILITY"));
+  const stick=R.filter(r=>r.mode==="stick"), stHosp=stick.filter(r=>r.harm==="需住院或急诊").length, pf=cntIf(r=>T(r).includes("PUSH FORCE TEST SPEC"));
+  const use=R.filter(r=>r.mode==="use"), useHosp=use.filter(r=>r.harm==="需住院或急诊").length;
+  const AI=["Humira","Amgen","肾上腺素","其他自动","Dupixent","礼来 一次性","GLP-1"], ai=R.filter(r=>AI.some(p=>r.family.startsWith(p))), aiRecent=ai.filter(r=>r.year>=2017).length, collar=cntIf(r=>T(r).includes("STOP COLLAR"));
+  const F=[
+    {big:tab.length,t:"HumaPen Ergo 的药筒架卡扣断裂是最集中的问题，而且患者往往察觉不到",
+     p:`HumaPen Ergo 共 ${erg.length} 条报告，其中 ${tab.length} 条提到药筒架卡扣（engagement tab），${tabConf} 条经厂家退回检验确认。厂家在 ${tabUnder} 条调查叙述中写到「双卡扣断裂会导致给药不足 / 剂量精度超标」。问题从 2001 年持续到 2011 年。`,
+     d:"卡扣的疲劳寿命验证要覆盖整个使用周期；断裂后应「装不上」或有可见提示，不能让笔带病继续工作；剂量精度要按使用次数分段验证。",
+     j:"可复用型注射笔的结构件失效会直接变成剂量风险，这类「隐性失效」应写进风险管理文件的 FMEA。", f:{q:"ENGAGEMENT TAB"}},
+    {big:seg,t:"电子显示「缺笔段」：说明书要求停用，用户仍在凭咔嗒声估剂量",
+     p:`HumaPen Memoir（带记忆功能的胰岛素笔）${mem.length} 条报告中 ${seg} 条是显示屏缺笔段，${memConf} 条经检验确认，2010 年单年 ${mem10} 条。有报告写到用户在显示报错后「数咔嗒声来设定剂量」。`,
+     d:"显示模块要有开机自检和故障报警；剂量相关信息不能只依赖单一显示通道；风险控制不能只放在说明书里。",
+     j:"给慢病和老年用户的智能注射产品，电子功能失效时的降级方案要在设计阶段定好。", f:{fam:"HumaPen Memoir（礼来 带记忆胰岛素笔）"}},
+    {big:mi,t:"包装材料也会让笔开裂：一次材料相容性问题",
+     p:`2019 年 BD Pen II（Omnitrope 生长激素笔）有 ${mi} 条笔身开裂报告。厂家结论：药瓶固定件的聚碳酸酯与笔袋里的增塑剂邻苯二甲酸二辛酯（DOP）发生作用导致开裂。`,
+     d:"材料相容性验证要覆盖包装、笔袋、清洁剂等所有会接触的材料，而不只是药液。",
+     j:"做制药外包材和注射器的企业，器械与包材的相容性要一起验证。", f:{q:"MATERIAL INCOMPATIBILITY"}},
+    {big:stick.length,t:"「按不动 / 转不动」投诉常伴随住院，但退回检验多数「符合规格」",
+     p:`按钮 / 拨轮卡滞类共 ${stick.length} 条，其中 ${stHosp} 条（${Math.round(100*stHosp/stick.length)}%）伴随住院或急诊。BD Pen II 有 ${pf} 条退回后按压力测试「符合规格」，报告里却写着帕金森冻结发作时拨不动、拇指按不下去要用双手。`,
+     d:"按压力和旋转力矩的规格要按目标人群（老人、手部力量弱、震颤）制定，并做人因可用性验证；高粘度药液会进一步推高注射力。",
+     j:"「符合规格」不等于「用户用得了」，规格本身要从用户出发来定。", f:{mode:"按钮 / 拨轮卡滞"}},
+    {big:use.length,t:"使用错误数量不多，但后果最重",
+     p:`使用错误类 ${use.length} 条，其中 ${useHosp} 条（${Math.round(100*useHosp/use.length)}%）住院或急诊，是所有类别里比例最高的。典型情形：没排气、注射后没停留 5 秒、混淆两支笔、药房误发半单位笔、10mg 药筒能装进 5mg 笔。`,
+     d:"防错设计优先于培训：不同规格、不同药物从结构和颜色上区分；关键步骤要有反馈（声音、视窗、阻力变化）。",
+     j:"把使用错误当成设计问题来解决，而不是归咎于用户。", f:{mode:"使用错误 / 说明书理解"}},
+    {big:ai.length,t:"一次性自动注射器：近年报告集中在「不出针 / 不出药」",
+     p:`自动注射器和预灌封笔（Humira、SureClick、EpiPen、Dupixent、Trulicity、GLP-1 等）共 ${ai.length} 条，${aiRecent} 条在 2017 年以后。主要问题是针头不弹出、按下后不出药或只打了一部分；另有 ${collar} 条与 EpiPen 止动环缺失召回有关。`,
+     d:"触发机构和给药完成指示的可靠性要做批次级抽检；急救类产品要考虑「一次失败」的后果。",
+     j:"一次性自动注射器没有第二次机会，每一支都要可靠触发。", f:{q:"AUTO"}}
+  ];
+  $("#findings").innerHTML=F.map((x,i)=>`<article class="panel finding"><div class="big">${x.big}</div><div><h3>${x.t}</h3><p>${x.p}</p>
+    <div class="act"><div><b>设计输入</b><span>${x.d}</span></div><div><b>启示</b><span>${x.j}</span></div></div>
+    <p><button class="linkish" data-find="${i}">查看相关报告 →</button></p></div></article>`).join("");
+  $("#findings").onclick=e=>{const b=e.target.closest("[data-find]");if(b)goReports(F[+b.dataset.find].f)};
+}
+
+function opts(sel,label,vals){sel.innerHTML=`<option value="">${label}：全部</option>`+vals.map(v=>`<option>${esc(v)}</option>`).join("")}
+function syncFilters(){$("#f-mode").value=state.mode;$("#f-fam").value=state.fam;$("#f-harm").value=state.harm;$("#f-src").value=state.src;$("#f-q").value=state.q}
+function filtered(){const q=state.q.trim().toUpperCase();return R.filter(r=>(!state.mode||r.mode_zh===state.mode)&&(!state.fam||r.family===state.fam)&&(!state.harm||r.harm===state.harm)&&(!state.src||r.source===state.src)&&(!q||(r.text+" "+r.mfr+" "+r.summary+" "+r.family).toUpperCase().includes(q)))}
+function harmPill(h){return `<span class="pill ${h==="需住院或急诊"?"crit":h==="无伤害"?"ok":/血糖|伤害/.test(h)?"warn":""}">${h}</span>`}
+function renderList(){
+  const xs=filtered();$("#f-count").textContent=`${xs.length} 条`;
+  $("#list").innerHTML=xs.slice(0,400).map(r=>`<div class="row" role="option" data-id="${r.id}" aria-selected="${r.id===state.sel}"><div class="meta"><span>${r.date}</span><span>${esc(r.family)}</span>${reviews[r.id]?'<span class="pill ok">已复核</span>':""}</div>
+    <div class="s">${r.summary?esc(r.summary):`<span>${r.mode_zh} · ${r.component}</span><br><span class="note">${esc(r.evidence.slice(0,100))}</span>`}</div><div class="meta"><span class="pill">${r.mode_zh}</span>${harmPill(r.harm)}<span class="pill src">${r.source}</span></div></div>`).join("")+(xs.length>400?`<p class="note" style="padding:10px">只显示前 400 条，请加筛选条件。</p>`:"");
+  if(!xs.find(r=>r.id===state.sel))state.sel=xs[0]?.id||null;
+  detail();
+}
+function hi(text,ev){if(!ev||ev.startsWith("（"))return esc(text);const k=ev.replace(/…$/,"").slice(20,60);const i=k?text.indexOf(k):-1;if(i<0)return esc(text);const s=Math.max(0,text.indexOf(ev.slice(0,30)));const st=s>=0?s:i;return esc(text.slice(0,st))+"<mark>"+esc(text.slice(st,st+ev.length))+"</mark>"+esc(text.slice(st+ev.length))}
+function detail(){
+  const r=R.find(x=>x.id===state.sel), box=$("#detail");
+  document.querySelectorAll("#list .row").forEach(e=>e.setAttribute("aria-selected",e.dataset.id===state.sel));
+  if(!r){box.innerHTML='<p class="note">没有符合条件的报告。</p>';return}
+  const rv=reviews[r.id];
+  box.innerHTML=`<h3>${esc(r.summary||(r.mode_zh+" · "+r.component))}</h3>
+  <dl><dt>失效模式</dt><dd><span class="pill">${r.mode_zh}</span> <span class="note">判定来源：${r.source}${r.rule_mode&&r.llm_mode&&r.rule_mode!==r.llm_mode?" · 规则与大模型不一致":""}</span></dd>
+  <dt>失效部件</dt><dd>${r.component}</dd><dt>患者后果</dt><dd>${harmPill(r.harm)}</dd><dt>调查结论</dt><dd>${r.root}</dd>
+  <dt>产品</dt><dd>${esc(r.family)}<br><span class="note">原始品牌名：${esc(r.brand_raw)} · ${esc(r.manufacturer)}</span></dd>
+  <dt>报告</dt><dd><span class="note">MDR ${r.id} · ${r.date} · ${r.event_type}${r.fda_codes.length?" · FDA 代码："+esc(r.fda_codes.join("、")):""}</span></dd></dl>
+  <div class="note">原文（已去掉模板话术；高亮为判定证据）</div><div class="orig">${hi(r.text,r.evidence)}</div>
+  ${r.mfr?`<div class="note" style="margin-top:8px">厂家调查叙述</div><div class="orig">${esc(r.mfr)}</div>`:""}
+  <div class="review" id="rv">${rv?`<span class="pill ok">已复核</span><span>${rv.verdict==="agree"?"同意系统判定":"人工改为："+esc(rv.final)}</span>`:""}
+  ${canEdit?`<button class="btn primary" data-rv="agree">判定正确</button><select id="rv-sel" aria-label="改为其他类别" class="btn">${MODE_ORDER.map(m=>`<option ${m===r.mode_zh?"selected":""}>${m}</option>`).join("")}</select><button class="btn" data-rv="fix">改为所选类别</button>`:(rv?"":'<span class="note">人工复核由作者在本页完成。</span>')}</div>`;
+}
+async function saveReview(kind){
+  const r=R.find(x=>x.id===state.sel);if(!r||!db)return;
+  const final=kind==="agree"?r.mode_zh:$("#rv-sel").value;
+  const doc={verdict:final===r.mode_zh?"agree":"corrected",final,system:r.mode_zh,source:r.source,t:Date.now()};
+  try{await db.collection("reviews").doc(r.id).set(doc);reviews[r.id]=doc;detail();renderReview();
+    const xs=filtered(),i=xs.findIndex(x=>x.id===r.id);if(xs[i+1]){state.sel=xs[i+1].id;renderList()}}
+  catch(e){$("#rv").insertAdjacentHTML("beforeend",`<span class="note">保存失败：${esc(e.code||e.message)}。请稍后再试。</span>`)}
+}
+
+function pipeline(){
+  const c=S.insights.cleaning, src=S.insights.by_source;
+  const st=[["01 采集",c.raw_records,"openFDA 接口导出的原始报告"],["02 清洗",c.kept,`去重 ${c.dropped_duplicates} · 空正文 ${c.dropped_empty} · 剥离模板句 ${c.boilerplate_sentences_removed}`],
+    ["03 归一",`${c.manufacturer_raw_spellings}→${c.manufacturer_canonical}`,`厂家写法归一；品牌 ${c.brand_raw_spellings} 种写法 → ${c.product_families} 个产品族`],
+    ["04 规则层",src["规则"],"高置信直接采用"],["05 大模型层",src["大模型"],"规则拿不准的才调用"],["06 复核与洞察",Object.keys(reviews).length,"已人工复核条数（实时）"]];
+  $("#flow").innerHTML=st.map(([k,n,t])=>`<div class="step"><span class="k">${k}</span><span class="n">${n}</span><span class="t">${t}</span></div>`).join("");
+  $("#mfr-ex").innerHTML=Object.entries(S.insights.mfr_examples).map(([k,v])=>`<p><b>${esc(k)}</b> ← ${v.length} 种写法</p><p class="note">${v.map(esc).join(" ｜ ")}</p>`).join("");
+  $("#fam-ex").innerHTML=Object.entries(S.insights.family_examples).map(([k,v])=>`<p><b>${esc(k)}</b></p><p class="note">${v.map(esc).join(" ｜ ")} …</p>`).join("");
+}
+
+function evalView(){
+  const E=S.eval;
+  $("#ev-note").textContent=`规则高置信样本中随机抽 ${E.rule_vs_llm_sample} 条，同时交给大模型判定。`;
+  $("#t-dis").innerHTML=`<tr><th>规则判为</th><th>大模型判为</th><th>条数</th></tr>`+E.disagreements.map(d=>`<tr><td>${d.rule}</td><td>${d.llm}</td><td class="num">${d.n}</td></tr>`).join("");
+  const rows=E.disagree_ids.map(id=>R.find(r=>r.id===id)).filter(Boolean);
+  const MZ=Object.fromEntries(R.map(r=>[r.mode,r.mode_zh]));
+  $("#t-dis-rows").innerHTML=`<tr><th>MDR</th><th>产品族</th><th>规则</th><th>大模型</th><th>原文片段</th><th></th></tr>`+rows.map(r=>`<tr><td class="num">${r.id}</td><td>${esc(r.family)}</td><td>${MZ[r.rule_mode]||r.rule_mode}</td><td>${MZ[r.llm_mode]||r.llm_mode}</td><td style="min-width:260px">${esc(r.text.slice(0,140))}…</td><td><button class="linkish" data-open="${r.id}">打开</button></td></tr>`).join("");
+  $("#t-dis-rows").onclick=e=>{const b=e.target.closest("[data-open]");if(b){goReports({});state.sel=b.dataset.open;renderList()}};
+  renderReview();
+}
+function renderReview(){
+  const E=S.eval, rv=Object.values(reviews), n=rv.length, ok=rv.filter(x=>x.verdict==="agree").length;
+  const by=s=>{const a=rv.filter(x=>x.source===s);return a.length?`${Math.round(100*a.filter(x=>x.verdict==="agree").length/a.length)}%（${a.length} 条）`:"—"};
+  $("#ev-kpis").innerHTML=[[Math.round(100*E.agree_rate)+"%","规则与大模型一致率",`${E.agree}/${E.rule_vs_llm_sample} 条`],[E.rule_vs_llm_sample-E.agree,"分歧样本","优先人工复核"],[n,"已人工复核","在「报告浏览」逐条复核"],[n?Math.round(100*ok/n)+"%":"—","人工确认的系统准确率",n?`规则 ${by("规则")} · 大模型 ${by("大模型")}`:"复核后自动计算"]]
+    .map(([v,l,d])=>`<div class="panel kpi"><div class="n">${v}</div><div class="l">${l}</div><div class="d">${d}</div></div>`).join("");
+  const fix=rv.filter(x=>x.verdict==="corrected");
+  $("#rv-box").innerHTML=n?`<p>已复核 ${n} 条，其中 ${fix.length} 条被人工改判。</p>${fix.length?`<table><tr><th>系统</th><th>人工</th><th>来源</th></tr>${fix.slice(0,12).map(x=>`<tr><td>${x.system}</td><td>${x.final}</td><td>${x.source}</td></tr>`).join("")}</table>`:""}`
+    :`<p class="note">还没有复核记录。作者在「报告浏览」里逐条点「判定正确」或改判，结果实时汇总到这里，作为评估两层判定准确率的金标。</p>`;
+  const st=document.querySelector("#flow .step:last-child .n");if(st)st.textContent=n;
+}
+
+async function boot(){
+  route();
+  try{[R,S]=await Promise.all([fetch("records.json").then(r=>r.json()),fetch("summary.json").then(r=>r.json())])}
+  catch(e){$("#ov-lede").textContent="数据载入失败，请刷新页面。";return}
+  opts($("#f-mode"),"失效模式",MODE_ORDER);
+  opts($("#f-fam"),"产品族",Object.entries(cnt(R,r=>r.family)).sort((a,b)=>b[1]-a[1]).map(x=>x[0]));
+  opts($("#f-harm"),"患者后果",HARMS);opts($("#f-src"),"判定来源",["规则","大模型","规则（低置信）"]);
+  ["mode","fam","harm","src"].forEach(k=>$("#f-"+k).onchange=e=>{state[k]=e.target.value;renderList()});
+  let qt;$("#f-q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{state.q=e.target.value;renderList()},180)};
+  $("#list").onclick=e=>{const r=e.target.closest(".row");if(r){state.sel=r.dataset.id;detail()}};
+  $("#detail").onclick=e=>{const b=e.target.closest("[data-rv]");if(b)saveReview(b.dataset.rv)};
+  document.addEventListener("click",e=>{const m=e.target.closest("[data-mode]"),f=e.target.closest("[data-fam]");if(m)goReports({mode:m.dataset.mode});if(f)goReports({fam:f.dataset.fam})});
+  overview();findings();pipeline();evalView();renderList();
+  if(window.claude?.use){
+    claude.use("user").then(async u=>{try{canEdit=!!(u&&await u.canEdit())}catch(e){canEdit=false}detail()}).catch(()=>{});
+    claude.use("db").then(d=>{if(!d)return;db=d;d.collection("reviews").onSnapshot(s=>{reviews={};s.docs.forEach(x=>reviews[x.id]=x.data());renderReview();renderList()},()=>{})}).catch(()=>{});
+  }
+}
+boot();
+</script>
